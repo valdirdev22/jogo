@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Efeito de Onda</title>
+
+<style>
+#theDiv {
+ position : relative;  margin-top: 210px; z-index: 8; visibility : visible; align : center; color:#6A0888;
+ font-size: medium;
+}
+
+body {
+    background: #f4f2ec url(./img/timao.jpg) repeat;
+    
+
+}
+
+   
+</style>
+
+<script language="JavaScript">
+//script encontrado em a1javascripts.com
+function nextSize(i,incMethod,textLength)
+{
+if (incMethod == 1) { return (95*Math.abs(Math.sin(i/(textLength/3.14))) );
+}
+if (incMethod == 2) { return (340*Math.abs(Math.cos(i/(textLength/3.14))));
+}
+return(0)
+}
+function sizeCycle(text,method,dis)
+{
+var output = "";
+for (i = 0; i < text.length; i++) {
+size = parseInt(nextSize(i +dis,method,text.length));
+output += "<font style='font-size: "+ size +"pt'>" +text.substring(i,i+1)+ "</font>";
+}
+if (document.all)
+theDiv.innerHTML = output;
+else if (document.getElementById){
+rng = document.createRange();
+el = document.getElementById('theDiv');
+rng.setStartBefore(el);
+htmlFrag = rng.createContextualFragment(output);
+while (el.hasChildNodes()) el.removeChild(el.lastChild);
+el.appendChild(htmlFrag);}
+else if (document.layers){
+
+document.theDiv.document.write("<font face='Verdana'point-size=11>"+output + "</font>");
+document.theDiv.document.close();}
+
+
+}
+//coloque seu texto aqui
+
+function doWave(n) {
+var theText = '<b>Parabéns Manu você ganhou!!!!<b>';
+
+sizeCycle(theText,1,n);
+if (n > theText.length) {
+n=0
+}
+setTimeout("doWave(" + (n+3) + ")", 1000);
+}
+
+</script>
+
+
+<body onload="doWave(0)">
+
+
+<div ID="theDiv" align="center"></div>
+</head>
+
+<body>
+
+</body>
+</html>

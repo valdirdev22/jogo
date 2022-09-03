@@ -1,0 +1,144 @@
+ 
+body {
+    background: #f4f2ec url(./img/back_1.jpg) repeat;
+  
+}
+
+* memoria.css {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.container .wrapper {
+   position: relative;
+   margin-bottom: 40px;
+   padding-top: 15px;
+   max-height: 250px;    
+}
+
+.box-degrade {
+   width: 1200px;
+   max-height: 240px;
+   padding-bottom: 10px;
+   display:block;
+  
+  /* background-image:  linear-gradient(to left, blue, yellow, orange);
+   background-size: 500% 100%; */
+   animation: degrade-animado 32s infinite;
+}
+
+@keyframes degrade-animado {
+   0% {
+       background-position-x: 300%;
+   }
+ 
+   300% {
+       background-position-x: 0%;
+   } 
+}
+
+
+
+p {
+   font-size: 35pt;
+   /*
+   color:rgb(246, 250, 14);
+   background-color:  hwb(63 10% 3%);
+   */
+   margin-top: -5px;
+   text-align: justify;
+   }
+
+.titulo {
+   padding-top: 2px;
+   margin-top: -58px;
+   margin-left: 320px;
+   width: 454px;
+   height: 62px;
+   border-radius: 42px;
+   background-image: linear-gradient(to right, #0040FF, #00BFFF, #FFBF00, #00FF40);
+   text-align: center;
+
+}
+
+
+#memoria #matematica {
+   font-family: Arial, Helvetica, sans-serif;
+   background-color: #01DFD7;
+   text-align: center;
+   font-weight: 45pt;
+   display: block;
+   position: relative;
+   color: rgb(8, 2, 15);
+   padding-top: -5px;
+   margin-top: 20px;
+   margin-right: -92px;
+   height: 49px;
+   width: 162px;
+   float: right;
+   border-radius: 25px;
+}
+
+#memoria img {
+
+   display: block;
+   position: relative;
+   height: 290px;  
+   margin-bottom: 10px;
+   padding-bottom: 2px;
+   border: 6px solid #0B0B61;
+   width: 165px;
+   height: 165px;
+   border-radius: 96px;
+}
+
+
+.wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   position:relative;
+   margin-top: -60px;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   padding: 15px;
+ }
+
+ .box {
+  
+   margin: 2px;
+ }
+
+  #btInicio {
+   display: block;
+   position: relative;
+   float: right;
+   margin-right: -341px;
+   margin-top: 158px;
+   padding-bottom: -50px;
+   width: 192px;
+   height: 64px;
+   border-radius: 54px;
+   font-weight:450px;
+   font-size: 30pt;
+   text-align:center;
+   color:#191a19;
+   background-color: #01DFD7;  
+}  
+
+.audio-position{
+   position: relative;
+   max-width: 170px;
+   margin-top:  24px;
+   margin-left: 812px;
+   padding-top: -15px;
+}
+
+.wrapper {
+   position: relative;
+   margin-top:  -130px;
+   padding-top: 3px;
+   padding-bottom: 5px;
+
+}

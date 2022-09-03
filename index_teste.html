@@ -1,0 +1,70 @@
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+ 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>TREINANDO A MEMÓRIA</title>
+  </head>
+    <body>
+<script>
+function loadPlayer() {
+    var audioPlayer = new Audio();
+    audioPlayer.controls="controls";
+    audioPlayer.addEventListener('ended',nextSong,false);
+    audioPlayer.addEventListener('error',errorFallback,true);
+    document.getElementById("player").appendChild(audioPlayer);
+    nextSong();
+}
+function nextSong() {
+    if(urls[next]!=undefined) {
+        var audioPlayer = document.getElementsByTagName('audio')[0];
+        if(audioPlayer!=undefined) {
+            audioPlayer.src=urls[next];
+            audioPlayer.load();
+            audioPlayer.play();
+            next++;
+        } else {
+            loadPlayer();
+        }
+    } else {
+        alert('the end!');
+    }
+}
+function errorFallback() {
+        nextSong();
+}
+function playPause() {
+    var audioPlayer = document.getElementsByTagName('audio')[0];
+    if(audioPlayer!=undefined) {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+        } else {
+            audioPlayer.pause();
+        }
+    } else {
+        loadPlayer();
+    }
+}
+function pickSong(num) {
+    next = num;
+    nextSong();
+}
+
+var urls = new Array();
+    urls[0] = 'audio.mp3';
+    urls[1] = 'audio.mp3';
+    urls[2] = 'audio.mp3';
+    urls[3] = 'audio.mp3';
+    urls[4] = 'audio.mp3';
+    urls[5] = 'audio.mp3';   
+    urls[6] = 'audio.mp3';       
+var next = 0;
+</script>
+
+</body>
+</html>
